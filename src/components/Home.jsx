@@ -1,13 +1,25 @@
 import React from 'react'
-import Header from './Header'
+import HomeListing from './HomeListing'
 
-function Home({handleSearchChange}) {
+function Home({jobs}) {
   return (
-    <div className='home'>
-      <Header handleSearchChange={handleSearchChange}/>
-      <p>Looking for something new? <br/> Your next job awaits.</p>
-      <p>Let us help you make that career switch today.</p>
-    </div>
+      <div className='home'>
+        <div className="home-btns">
+          <div className="name">
+            <p>Firstname Lastname</p>
+          </div>
+          <div className="cv-btn">
+            <p>Got your CV?</p>
+            <button>Upload</button>
+            <button>Create</button>
+          </div>
+          <div className="shortlist-btn">
+            <p>Found something?</p>
+            <button>View Shortlist</button>
+          </div>
+        </div>
+        <HomeListing jobs={jobs}/>
+      </div>
   )
 }
 

@@ -6,18 +6,17 @@ const JobDetails = ({ job, setSelectedJob, addToShortlist }) => {
     addToShortlist(job);
   };
   return (
-    <div className='details-container'>
-      <h2>{job.role}</h2>
-      <p>{job.company_name}</p>
-      {job.location ? <p>LOCATION: {job.location}</p> : null}
-      {job.employment_type ? <p>TYPE: {job.employment_type}</p> : null}
-      <div dangerouslySetInnerHTML={{__html: data}}/>
-      <div className="job-btns">
-        <button onClick={handleAddToShortlist}>Add to Shortlist</button>
-        <button onClick={() => setSelectedJob(null)}>Go Back</button>
+      <div className='details-container'>
+        <h2>{job.role}</h2>
+        <p>{job.company_name}</p>
+        {job.location ? <p>LOCATION: {job.location}</p> : null}
+        {job.employment_type ? <p>TYPE: {job.employment_type}</p> : null}
+        <div dangerouslySetInnerHTML={{__html: data}}/>
+        <div className="job-btns">
+          <button onClick={handleAddToShortlist}>Add to Shortlist</button>
+          <button onClick={() => setSelectedJob(null)}>Go Back</button>
+        </div>
       </div>
-
-    </div>
   );
 };
 

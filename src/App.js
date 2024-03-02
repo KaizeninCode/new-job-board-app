@@ -8,6 +8,7 @@ import Home from './components/Home';
 import ShortList from './components/ShortList';
 import Login from './components/Login';  
 import SignUp from './components/SignUp';
+import Header from './components/Header';
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -51,12 +52,11 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* <Header handleSearchChange={handleSearchChange}/> */}
+        <Header/>
         <Routes>
-          <Route exact path="/" element={<Home handleSearchChange={handleSearchChange}/>}/>
+          <Route exact path="/" element={<Home jobs={jobs}/>}/>
           <Route path="/job-list" element={<JobList jobs={jobs} />}/>  
           <Route path="/shortlist" element={<ShortList shortlistedJobs={jobs} onApply={handleApply} onRemove={handleRemove} />}/>  
-          {/* <Route path="/apply" element={<ApplyForm />}/>   */}
           <Route path="/login" element={<Login />} /> 
           <Route path="/signup" element={<SignUp />} />
         </Routes>

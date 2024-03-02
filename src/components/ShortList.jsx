@@ -30,17 +30,13 @@ function ShortList() {
   }
 
   return (
-    <div>
-      <Header/>
-      <div className='shortlist-container'>
-         {shortlist.map(job => <ShortListItem  
-            key={job.id} 
-            job={job} 
-            handleShortlistClick={handleShortlistClick}
-            handleApplyClick={handleApplyClick}
-        />)}
-       <div/>
-    </div>
+    <div className='shortlist-container'>
+      {shortlist.map(job => <ShortListItem  
+        key={job.id} 
+        job={job} 
+        handleShortlistClick={handleShortlistClick}
+        handleApplyClick={handleApplyClick}
+      />)}
     </div>
   )
          }

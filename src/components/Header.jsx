@@ -7,8 +7,9 @@ const Header = () => {
         textDecoration: 'none',
         color: '#010101',
         borderRadius: '0.3125rem',
+        width: '5rem',
         margin: '0 1rem',
-        padding: '0.3125rem',
+        padding: '0.75rem',
         textAlign: 'center',
     }
   return (
@@ -19,7 +20,9 @@ const Header = () => {
             <NavLink to="/job-list" style={navlinkStyles}>Browse Jobs</NavLink>
             <NavLink to="/shortlist" style={navlinkStyles}>Shortlist</NavLink>
         </nav>
-        {/* <SearchBar handleSearchChange={handleSearchChange}/> */}
+        <div class="toggle-icon">
+          <i class="fas fa-moon"></i>
+      </div>
     </div>
   );
 };
