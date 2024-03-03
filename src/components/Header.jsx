@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const Header = () => {
     const navlinkStyles = {
         textDecoration: 'none',
-        color: '#010101',
+        color: '#e2e2e2',
         borderRadius: '0.3125rem',
         width: '5rem',
         margin: '0 1rem',

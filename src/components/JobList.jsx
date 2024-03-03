@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import JobItem from './JobItem';
 import Header from './Header';
 import JobDetails from './JobDetails';
+import Footer from './Footer';
 
 const JobList = ({ jobs }) => {
   const [selectedJob, setSelectedJob] = useState(null);
@@ -23,24 +24,28 @@ const JobList = ({ jobs }) => {
   };
 
   return (
+    <>
+      <Header/>
       <div className='job-container'>
         {selectedJob ? (
           <JobDetails 
-            job={selectedJob} 
-            setSelectedJob={setSelectedJob} 
-            addToShortlist={addToShortlist}
+          job={selectedJob} 
+          setSelectedJob={setSelectedJob} 
+          addToShortlist={addToShortlist}
           />
-        ) : (
-          jobs.map((job) => (
-            <JobItem
+          ) : (
+            jobs.map((job) => (
+              <JobItem
               key={job.id}
               job={job}
               selectedJob={selectedJob}
               setSelectedJob={setSelectedJob}              
-            />
-          ))
-        )}
+              />
+              ))
+              )}
       </div>
+      <Footer/>
+    </>
   );
 };
 

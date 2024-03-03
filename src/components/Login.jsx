@@ -1,41 +1,61 @@
 import React, { useState } from 'react';
-import './LandingPage.css';
+import LoginHeader from './LoginHeader'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const [username, setUsername] = useState('')
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
+    navigate('/')
     console.log('Logging in with:', { email, password });
   };
 
   return (
-    <div className='login'>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Email:
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <label>Password:
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <button type="submit">Login</button>
-      </form>
-    </div>
+    <>
+      <LoginHeader/>
+      <div className='signup'>
+        <div className="img"></div>
+          <form onSubmit={handleSubmit}>
+            <h1>Sign In</h1>
+            <div className="form-content">
+              <label>Username <br/>
+                <input
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
+            <div className="form-content">
+              <label>Email <br/>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
+            <div className="form-content">
+              <label>Password <br/>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
+            <br />
+            <button style={{width: '9rem'}} type="submit">Sign In</button>
+          </form>
+        </div>
+    </>
   );
 }
 

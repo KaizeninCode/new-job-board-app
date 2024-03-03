@@ -1,8 +1,12 @@
 import React from 'react'
 import HomeListing from './HomeListing'
+import Header from './Header'
+import Footer from './Footer'
 
 function Home({jobs}) {
   return (
+    <>
+      <Header/>
       <div className='home'>
         <div className="home-btns">
           <div className="name">
@@ -20,6 +24,8 @@ function Home({jobs}) {
         </div>
         <HomeListing jobs={jobs}/>
       </div>
+      <Footer/>
+    </>
   )
 }
 

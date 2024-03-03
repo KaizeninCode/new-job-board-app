@@ -11,7 +11,7 @@ function Footer() {
         padding: '0.75rem',
         textAlign: 'center',
     }
-  return (
+  return (  
     <div className='footer'>
       <div className="footer-navlinks">
           <NavLink to='/about' style={navlinkStyles}>About</NavLink>

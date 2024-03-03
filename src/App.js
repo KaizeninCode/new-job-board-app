@@ -8,8 +8,6 @@ import Home from './components/Home';
 import ShortList from './components/ShortList';
 import Login from './components/Login';  
 import SignUp from './components/SignUp';
-import Header from './components/Header';
-import Footer from './components/Footer';
 import About from './components/About';
 import Privacy from './components/Privacy';
 import Terms from './components/Terms';
@@ -56,18 +54,16 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header/>
         <Routes>
+          <Route path="/login" element={<Login />} /> 
+          <Route path="/signup" element={<SignUp />} />
           <Route exact path="/" element={<Home jobs={jobs}/>}/>
           <Route path="/job-list" element={<JobList jobs={jobs} />}/>  
           <Route path="/shortlist" element={<ShortList shortlistedJobs={jobs} onApply={handleApply} onRemove={handleRemove} />}/>  
-          <Route path="/login" element={<Login />} /> 
-          <Route path="/signup" element={<SignUp />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
         </Routes>
-        <Footer/>
       </div>
     </Router>
    );

@@ -9,7 +9,7 @@ function ShortListItem({job,handleShortlistClick, handleApplyClick}) {
           {job.employment_type ? <p>TYPE: {job.employment_type}</p> : null}
           <div className="job-btns">
               <button onClick={handleApplyClick}>Apply</button>
-              <button onClick={handleShortlistClick}>Remove from Shortlist</button>
+              <button onClick={() => handleShortlistClick(job)}>Remove from Shortlist</button>
           </div>
         </div>
       );

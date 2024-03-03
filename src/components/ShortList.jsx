@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Header from './Header'
 import ShortListItem from './ShortListItem'
+import Footer from './Footer'
 
 function ShortList() {
     const [shortlist, setShortlist] = useState([])
@@ -12,8 +13,9 @@ function ShortList() {
   }, [])
 
   function handleShortlistClick(job) {
-    let newShortlist = shortlist.filter((j) => j !== job);
-    setShortlist(newShortlist)
+    fetch(`http://localhost:3000/shortlist/${job.id}`, {
+      method: 'DELETE',
+    })
   }
   function handleApplyClick(job){
     fetch('http://localhost:3000/applied', {
@@ -30,14 +32,18 @@ function ShortList() {
   }
 
   return (
-    <div className='shortlist-container'>
-      {shortlist.map(job => <ShortListItem  
-        key={job.id} 
-        job={job} 
-        handleShortlistClick={handleShortlistClick}
-        handleApplyClick={handleApplyClick}
-      />)}
-    </div>
+    <>
+      <Header/>
+      <div className='shortlist-container'>
+        {shortlist.map(job => <ShortListItem  
+          key={job.id} 
+          job={job} 
+          handleShortlistClick={handleShortlistClick}
+          handleApplyClick={handleApplyClick}
+          />)}
+      </div>
+      <Footer/>
+    </>
   )
          }
 export default ShortList

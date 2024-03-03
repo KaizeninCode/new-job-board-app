@@ -49,7 +49,9 @@ body::-webkit-scrollbar {
 .home-listing button, 
 .cv-btn button, 
 .shortlist-btn button, 
-.home-listing-head button {
+.home-listing-head button, 
+button[type=submit],
+.signup-header button {
   width: 6rem;
   height: 2rem;
   background-color: #9764b2;
@@ -63,7 +65,9 @@ body::-webkit-scrollbar {
 .home-listing button:hover, 
 .shortlist-btn button:hover, 
 .cv-btn button:hover, 
-.home-listing-head button:hover {
+.home-listing-head button:hover,
+button[type=submit]:hover,
+.signup-header button:hover {
   background-color: #e2e2e2;
   color: #9764b2;
   box-shadow: 1px 6px 10px 1px #9764b2;
@@ -71,8 +75,8 @@ body::-webkit-scrollbar {
 }
 
 .home-job {
-  /* border: 1px solid #010101; */
-  box-shadow: 1px 2px 10px 1px #9764b2;
+  /* border: 1px solid #545454; */
+  box-shadow: 1px 2px 10px 1px #545454;
   width: 300px;
   height: fit-content;
   padding: .5rem;
@@ -81,7 +85,7 @@ body::-webkit-scrollbar {
 }
 
 .home-btns {
-  /* border: 1px solid #010101; */
+  /* border: 1px solid #545454; */
   width: 276px;
   height: 550px;
   margin-right: 5rem;
@@ -100,15 +104,15 @@ body::-webkit-scrollbar {
 }
 
 .name {
-  box-shadow: 1px 2px 10px 1px #9764b2;
-  /* border: 1px solid #010101; */
+  /* box-shadow: 1px 2px 10px 1px #9764b2; */
+  border: 1px solid #545454;
   text-align: center;
   border-radius: 15px;
 }
 
 .cv-btn, .shortlist-btn {
-  box-shadow: 1px 2px 10px 1px #9764b2;
-  /* border: 1px solid #010101; */
+  /* box-shadow: 1px 2px 10px 1px #9764b2; */
+  border: 1px solid #545454;
   border-radius: 15px;
   height: 200px;
   display: flex;
@@ -124,28 +128,46 @@ body::-webkit-scrollbar {
 
  h1 {
   margin-right: auto;
-  color: #9764b2
-}
+} 
 
 .header {
   /* border: 1px dotted purple; */
   margin: 0 auto;
-  /* width: 72.6875rem; */
   padding: 0 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: sticky;
+  color: #545454;
   top: 0;
   left: 0;
   z-index: 20;
-  /* background-color: #9764b2; */
+}
+
+.header {
+  /* border: 1px dotted purple; */
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  color: #e2e2e2;
+  background-color: #9764b2;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.header .active {
+  color: #6e2594 !important;
+  background-color: #e2e2e2;  
 }
 
 .toggle-icon {
   font-size: 1.1rem;
   cursor: pointer;
-  color: #010101;
+  color: #e2e2e2;
 }
 
 .active {
@@ -163,6 +185,7 @@ body::-webkit-scrollbar {
 
 .details-container {
   /* border: 1px dotted purple; */
+  margin: 0 auto;
   border-radius: 8px;
   box-shadow: 1px 1px 10px 1px rgba(1, 1, 1, 0.2);
   padding: 1rem 4rem;
@@ -243,7 +266,8 @@ body::-webkit-scrollbar {
 
 .footer {
   width: 100%;
-  height: 3.5rem;
+  padding: 0;
+  /* height: 3.5rem; */
   background-color: #9764b2;
   display: flex;
   justify-content: space-between;
@@ -265,3 +289,81 @@ body::-webkit-scrollbar {
   height: 80vh;
 }
 
+.signup {
+  /* border: 1px solid #010101; */
+  height: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img {
+  border: 1px solid #010101;
+  border-radius: 20px;
+  margin-left: 6rem;
+  width: 40%;
+  height: 100%;
+}
+
+.signup form {
+  border: 1px solid #545454;
+  border-radius: 20px;
+  height: 100%;
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: .2rem;
+}
+
+.signup form h1 {
+  color: #545454;
+  margin: 0 auto;
+}
+
+.form-content {
+  /* border: 1px solid #010101; */
+  width: 320px;
+  height: 4rem;
+  color: #545454;
+}
+
+.form-content input {
+  height: 2.5rem;
+  width: 100%;
+  padding: 0 1rem;
+  color: #545454;
+  border: 1px solid #545454;
+  border-radius: 20px;
+  background-color: transparent;
+  margin-top: 6px;
+}
+
+.form-content input:focus {
+  outline: 1px solid #9764b2;
+}
+
+.img {
+  background: url(./assets/the-room.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+}
+
+.signup-header {
+  width: 87%;
+  margin: 0 auto;
+  /* padding: 0 5rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid #010101; */
+}
+
+.signup-header h1 {
+  color: #545454;
+  margin-right: auto;
+}
