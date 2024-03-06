@@ -20,8 +20,8 @@ const Header = () => {
             <NavLink to="/job-list" style={navlinkStyles}>Browse Jobs</NavLink>
             <NavLink to="/shortlist" style={navlinkStyles}>Shortlist</NavLink>
         </nav>
-        <div class="toggle-icon">
-          <i class="fas fa-moon"></i>
+        <div className="toggle-icon">
+          <i className="fas fa-moon"></i>
       </div>
     </div>
   );

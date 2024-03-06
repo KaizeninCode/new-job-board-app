@@ -3,6 +3,7 @@ import SignUpHeader from './SignUpHeader';
 import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
+  const navigate = useNavigate()
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -10,7 +11,7 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    useNavigate.push('/login')
+    navigate('/login')
 
     console.log('Signing up with:', { username, email });
   };

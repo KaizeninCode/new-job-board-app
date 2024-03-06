@@ -1,34 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 import ShortListItem from './ShortListItem'
 import Footer from './Footer'
 
 function ShortList() {
     const [shortlist, setShortlist] = useState([])
-  const [appliedJobs, setAppliedJobs] = useState([])
-  useEffect(() => {
-    fetch('http://localhost:3000/shortlist')
-    .then(response => response.json())
-    .then(data => setShortlist(data))
-  }, [])
+    const [appliedJobs, setAppliedJobs] = useState([])
 
-  function handleShortlistClick(job) {
-    fetch(`http://localhost:3000/shortlist/${job.id}`, {
-      method: 'DELETE',
-    })
+  function handleApply(job){
+    setAppliedJobs(...appliedJobs, job.title)
+    console.log(appliedJobs)
   }
-  function handleApplyClick(job){
-    fetch('http://localhost:3000/applied', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(job),
-        })
-        .then((response) => response.json())
-        .then((data) => {
-          setAppliedJobs([...appliedJobs, data]);
-        })
+
+  const handleRemove = (job) => {
+    const filteredJobs = shortlist.filter(j => j.id !== job.id)
+    setShortlist(filteredJobs)
   }
 
   return (
@@ -37,9 +23,9 @@ function ShortList() {
       <div className='shortlist-container'>
         {shortlist.map(job => <ShortListItem  
           key={job.id} 
-          job={job} 
-          handleShortlistClick={handleShortlistClick}
-          handleApplyClick={handleApplyClick}
+          shortlistedJobs={shortlist} 
+          handleApplyClick={handleApply}
+          handleRemove={handleRemove}
           />)}
       </div>
       <Footer/>
