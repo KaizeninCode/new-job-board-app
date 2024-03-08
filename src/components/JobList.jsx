@@ -24,28 +24,24 @@ const JobList = ({ jobs }) => {
   };
 
   return (
-    <>
-      <Header/>
-      <div className='job-container'>
-        {selectedJob ? (
-          <JobDetails 
-          job={selectedJob} 
-          setSelectedJob={setSelectedJob} 
-          addToShortlist={addToShortlist}
-          />
-          ) : (
-            jobs.map((job) => (
-              <JobItem
-              key={job.id}
-              job={job}
-              selectedJob={selectedJob}
-              setSelectedJob={setSelectedJob}              
-              />
-              ))
-              )}
-      </div>
-      <Footer/>
-    </>
+    <div className='job-container'>
+      {selectedJob ? (
+        <JobDetails 
+        job={selectedJob} 
+        setSelectedJob={setSelectedJob} 
+        addToShortlist={addToShortlist}
+        />
+        ) : (
+          jobs.map((job) => (
+            <JobItem
+            key={job.id}
+            job={job}
+            selectedJob={selectedJob}
+            setSelectedJob={setSelectedJob}              
+            />
+            ))
+            )}
+    </div>
   );
 };
 

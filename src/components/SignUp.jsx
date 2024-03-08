@@ -18,7 +18,7 @@ const SignUp = () => {
 
   return (
     <>
-      <SignUpHeader/>
+      {/* <SignUpHeader/> */}
       <div className='signup'>
         <div className="img"></div>
           <form onSubmit={handleSubmit}>

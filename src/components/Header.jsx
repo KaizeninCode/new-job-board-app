@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Toggle from './Toggle';
 // import SearchBar from './SearchBar';
 
-const Header = () => {
+const Header = ({isChecked, handleChange}) => {
+
     const navlinkStyles = {
         textDecoration: 'none',
-        color: '#e2e2e2',
         borderRadius: '0.3125rem',
         width: '5rem',
         margin: '0 1rem',
@@ -20,9 +21,7 @@ const Header = () => {
             <NavLink to="/job-list" style={navlinkStyles}>Browse Jobs</NavLink>
             <NavLink to="/shortlist" style={navlinkStyles}>Shortlist</NavLink>
         </nav>
-        <div className="toggle-icon">
-          <i className="fas fa-moon"></i>
-      </div>
+        <Toggle isChecked={isChecked} handleChange={handleChange}/>
     </div>
   );
 };
