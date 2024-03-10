@@ -11,7 +11,7 @@ function HomeListing({jobs}) {
         </div>
         <div className="home-job-container">
           {firstFourJobs.map(job => (
-            <div className="home-job">
+            <div className="home-job" key={job.role}>
                 <p style={{marginBottom: '.5rem', textAlign: 'center'}}>{job.role}</p> 
                 <p style={{textAlign: 'center'}}>{job.company_name}</p>
             </div>

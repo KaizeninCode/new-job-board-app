@@ -1,0 +1,14 @@
+#searchbar {
+    background-color: transparent;
+    border: 1px solid var(--primary-text-color);
+    height: 2rem;
+    width: 50vw;
+    color: var(--primary-text-color);
+    margin-left: 300px;
+    border-radius: 6px;
+    padding: 0 1rem;
+}
+
+#searchbar:focus {
+    outline: none;
+}
